@@ -1,6 +1,6 @@
-🏦 Banking Fraud Risk Analytics Dashboard
+Banking Fraud Risk Analytics Dashboard
 
-📌 Project Overview
+Project Overview
 This project analyzes customer transaction data to identify high-risk fraud patterns using SQL and Power BI. It simulates a real-world banking fraud detection workflow by transforming raw data into actionable insights.
 
 The solution includes:
@@ -9,25 +9,25 @@ Feature engineering for fraud detection
 Risk classification logic
 Interactive Power BI dashboard with DAX measures
   
- 🛠️ Tools Used
+Tools Used
 MySQL (Data storage, cleaning, feature engineering)
 Power BI (Visualization & dashboarding)
 DAX (Measures & calculations)
 
 
-🧠 Key Insights
+Key Insights
 High-risk customers show increased night-time activity
 Large transactions are concentrated among a small group of users
 Multiple locations and device usage correlate with higher risk
 
-⚙️ Key Features
+Key Features
 Data cleaning and transformation using SQL
 Feature engineering for fraud detection
 Risk classification (Low, Medium, High)
 Interactive dashboard with drillthrough analysis
 Behavioral analysis of transactions
 
-🚀 How to Run
+How to Run
 Load dataset into MySQL
 Run SQL scripts in order
 Connect Power BI to database
@@ -35,7 +35,7 @@ Open .pbix file
 
 
 
-🗄️ SQL Implementation
+SQL Implementation
 
 1. Create Database
 sql
