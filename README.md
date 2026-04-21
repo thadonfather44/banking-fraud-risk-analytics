@@ -149,7 +149,7 @@ CASE
 END AS risk_level
 FROM customer_features_enriched;
 
-📊 Power BI (DAX Measures)
+Power BI (DAX Measures)
 
 Total Customers
 Total Customers = DISTINCTCOUNT(customer_risk[customer_id])
