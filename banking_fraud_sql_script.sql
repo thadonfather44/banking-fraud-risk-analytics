@@ -1,15 +1,10 @@
--- =========================================
--- Banking Fraud Risk Analytics Project
--- Full SQL Script
--- =========================================
+
 
 -- 1. DATABASE SETUP
 CREATE DATABASE IF NOT EXISTS banking_fraud_db;
 USE banking_fraud_db;
 
--- =========================================
--- 2. RAW TABLES (STAGING)
--- =========================================
+
 
 CREATE TABLE IF NOT EXISTS customers_raw (
     customer_id INT,
@@ -29,9 +24,7 @@ CREATE TABLE IF NOT EXISTS transactions_raw (
     device_type VARCHAR(50)
 );
 
--- =========================================
--- 3. CLEANING LAYER
--- =========================================
+
 
 DROP TABLE IF EXISTS customers_clean;
 CREATE TABLE customers_clean AS
@@ -67,9 +60,7 @@ UPDATE transactions_clean
 SET device_type = 'Unknown'
 WHERE device_type IS NULL OR device_type = '';
 
--- =========================================
--- 4. FEATURE ENGINEERING
--- =========================================
+
 
 DROP TABLE IF EXISTS customer_features;
 
@@ -94,9 +85,7 @@ SELECT
 FROM transactions_clean
 GROUP BY customer_id;
 
--- =========================================
--- 5. ENRICHMENT
--- =========================================
+
 
 DROP TABLE IF EXISTS customer_features_enriched;
 
@@ -121,9 +110,7 @@ FROM customers_clean c
 LEFT JOIN customer_features f
 ON c.customer_id = f.customer_id;
 
--- =========================================
--- 6. RISK CLASSIFICATION
--- =========================================
+
 
 DROP TABLE IF EXISTS customer_risk;
 
@@ -144,9 +131,7 @@ END AS risk_level
 
 FROM customer_features_enriched;
 
--- =========================================
--- 7. VALIDATION
--- =========================================
+
 
 SELECT risk_level, COUNT(*) 
 FROM customer_risk
